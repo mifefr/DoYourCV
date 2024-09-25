@@ -1,10 +1,11 @@
 const express = require('express');
+const userController = require('./src/application/controllers/UserController');
+
 const app = express();
 
-// Route d'accueil
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
+app.use(express.json());
+
+app.user('/api', userController);
 
 // Démarre le serveur
 const port = 3000;
